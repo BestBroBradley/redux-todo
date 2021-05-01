@@ -18,7 +18,7 @@ const Todos = () => {
 
     return (
         <>
-            {todos.map(todo => {<TodoItem/>})}
+            {todos.map(todo => {return <TodoItem key={todo.title} props={todo}/>})}
         </>
     )
 
