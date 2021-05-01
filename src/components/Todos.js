@@ -8,7 +8,7 @@ const Todos = () => {
 
     return (
         <>
-            {todos.map(todo => {return <TodoItem key={todo.title} props={todo}/>})}
+            {todos.length === 0 ? <h1 id="notodos">Let's make some to-do items!</h1> : todos.map(todo => {return <TodoItem key={todo.title} props={todo}/>})}
         </>
     )
 }

@@ -9,20 +9,17 @@ const TodoItem = (props) => {
     const dispatch = useDispatch()
 
     const handleDelete = () => {
-        console.log(title)
         dispatch(remove(title))
     }
 
     return (
-        <>
-            <h2>Title</h2>
-            <h3>{title}</h3>
-            <h2>Due Date</h2>
-            <h3>{date}</h3>
-            <h2>Memo</h2>
+        <div id="todoitem">
+            <h2>Item: {title}</h2>
+    <h2>Do by: {date}</h2>
+            <h2>Notes:</h2>
             <h3>{memo}</h3>
             <button onClick={handleDelete}>Delete Todo</button>
-        </>
+        </div>
     )
 }
 

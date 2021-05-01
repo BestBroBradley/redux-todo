@@ -1,5 +1,3 @@
-import { cloneNode } from "@babel/types";
-
 const todoReducer = (state = [
     {
         title: "Buy catfood",
@@ -16,7 +14,6 @@ const todoReducer = (state = [
         case "ADD":
             return(state.concat(action.payload.state));
         case "REMOVE":
-            console.log(action.payload)
             const newState = state.filter(todo => todo.title !== action.payload)
             return newState;
         default:
