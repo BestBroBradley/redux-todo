@@ -21,7 +21,6 @@ const Todos = () => {
             {todos.map(todo => {return <TodoItem key={todo.title} props={todo}/>})}
         </>
     )
-
 }
 
 export default Todos

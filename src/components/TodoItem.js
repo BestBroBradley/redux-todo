@@ -1,4 +1,5 @@
 import React from "react"
+import Button from "./Button"
 
 const TodoItem = (props) => {
 
@@ -14,6 +15,7 @@ const { title, date, memo } = props.props
             <h3>{date}</h3>
             <h2>Memo</h2>
             <h3>{memo}</h3>
+            <Button/>
         </>
     )
 }
