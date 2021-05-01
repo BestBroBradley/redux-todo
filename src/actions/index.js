@@ -1,7 +1,7 @@
 export const add = (todo) => {
     return{
         type: "ADD",
-        payload: todo 
+        payload: todo
     }
 };
 

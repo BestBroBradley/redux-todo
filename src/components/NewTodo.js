@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import Button from "./Button"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { add } from "../actions"
 
 const NewTodo = () => {
@@ -19,7 +18,7 @@ const NewTodo = () => {
     }
 
     const handleSubmit = () => {
-        dispatch(add(state))
+        dispatch(add({state}))
     }
 
     return (
