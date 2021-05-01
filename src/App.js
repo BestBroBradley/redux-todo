@@ -1,8 +1,6 @@
 import './App.css';
 import Header from "./components/Header"
-import Button from "./components/Button"
 import Todos from "./components/Todos"
-import TodoItem from "./components/TodoItem"
 import NewTodo from "./components/NewTodo"
 
 const App = () => {
@@ -12,7 +10,6 @@ const App = () => {
           <Header/>
           <Todos/>
           <NewTodo/>
-          <Button/>
       </header>
     </div>
   );

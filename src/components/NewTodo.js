@@ -1,6 +1,11 @@
 import React, { useState } from "react"
+import Button from "./Button"
+import { useSelector, useDispatch } from "react-redux"
+import { add } from "../actions"
 
 const NewTodo = () => {
+
+    const dispatch = useDispatch()
 
     const [ state, setState ] = useState({
         title: "",
@@ -13,6 +18,10 @@ const NewTodo = () => {
         setState({...state, [name]: value})
     }
 
+    const handleSubmit = () => {
+        dispatch(add(state))
+    }
+
     return (
         <>
             <h2>Add a new todo:</h2>
@@ -22,6 +31,7 @@ const NewTodo = () => {
             <input name="date" onChange={handleChange}/>
             <h4>Todo Memos:</h4>
             <input name="memo" onChange={handleChange}/>
+            <button type="submit" onClick={handleSubmit}>Submit</button>
         </>
     )
 }
