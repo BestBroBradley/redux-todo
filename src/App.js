@@ -9,13 +9,10 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
           <Header/>
           <Todos/>
-          <TodoItem/>
           <NewTodo/>
           <Button/>
-        </p>
       </header>
     </div>
   );

@@ -1,10 +1,17 @@
 import React from "react"
 
-const TodoItem = () => {
+const TodoItem = (props) => {
+
+console.log(props)
 
     return (
         <>
-            <h2>This will be a previous todo item.</h2>
+            <h2>Title</h2>
+            <h3>Sample Title</h3>
+            <h2>Due Date</h2>
+            <h3>Sample Date</h3>
+            <h2>Memo</h2>
+            <h3>Sample Memo</h3>
         </>
     )
 }
