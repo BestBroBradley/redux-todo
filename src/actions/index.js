@@ -5,8 +5,9 @@ export const add = (todo) => {
     }
 };
 
-export const remove = () => {
+export const remove = (title) => {
     return {
-        type: "REMOVE"
+        type: "REMOVE",
+        payload: title
     }
 };

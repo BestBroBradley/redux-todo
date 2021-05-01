@@ -1,11 +1,17 @@
 import React from "react"
-import Button from "./Button"
+import { useDispatch } from "react-redux"
+import { remove } from "../actions"
 
 const TodoItem = (props) => {
 
-console.log(props.props)
+    const { title, date, memo } = props.props
 
-const { title, date, memo } = props.props
+    const dispatch = useDispatch()
+
+    const handleDelete = () => {
+        console.log(title)
+        dispatch(remove(title))
+    }
 
     return (
         <>
@@ -15,7 +21,7 @@ const { title, date, memo } = props.props
             <h3>{date}</h3>
             <h2>Memo</h2>
             <h3>{memo}</h3>
-            <Button/>
+            <button onClick={handleDelete}>Delete Todo</button>
         </>
     )
 }
