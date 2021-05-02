@@ -1,6 +1,6 @@
 import React from "react"
-import { useDispatch } from "react-redux"
-import { remove } from "../actions"
+import { useDispatch, useSelector } from "react-redux"
+import { remove, controlledInput } from "../actions"
 
 const TodoItem = (props) => {
 
@@ -13,13 +13,18 @@ const TodoItem = (props) => {
     }
 
     const handleUpdate = () => {
-        console.log("clicked")
+        console.log(title)
+        console.log(date)
+        console.log(memo)
+        dispatch(controlledInput("title", title))
+        dispatch(controlledInput("date", date))
+        dispatch(controlledInput("memo", memo))
     }
 
     return (
         <div id="todoitem">
             <h2>Item: {title}</h2>
-    <h2>Do by: {date}</h2>
+            <h2>Do by: {date}</h2>
             <h2>Notes:</h2>
             <h3>{memo}</h3>
             <button onClick={handleUpdate}>Update Todo</button>
