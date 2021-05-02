@@ -12,7 +12,8 @@ const todoReducer = (state = [
 ], action) => {
     switch (action.type) {
         case "ADD":
-            return(state.concat(action.payload.state));
+            console.log(action.payload)
+            return(state.concat(action.payload));
         case "REMOVE":
             const newState = state.filter(todo => todo.title !== action.payload)
             return newState;

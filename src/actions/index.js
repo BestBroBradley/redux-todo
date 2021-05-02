@@ -11,3 +11,27 @@ export const remove = (title) => {
         payload: title
     }
 };
+
+export const controlledInput = (field, update) => {
+    return {
+        type: "CONTROL",
+        field: field,
+        update: update
+    }
+}
+
+export const update = (title, date, memo) => {
+    return {
+        type: "UPDATE",
+        title: title,
+        date: date,
+        memo: memo
+    }
+}
+
+export const clear = () => {
+    return {
+        type: "CLEAR"
+    }
+
+}

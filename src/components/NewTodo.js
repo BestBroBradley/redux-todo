@@ -1,35 +1,35 @@
-import React, { useState } from "react"
-import { useDispatch } from "react-redux"
-import { add } from "../actions"
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { add, clear, controlledInput } from "../actions"
+
 
 const NewTodo = () => {
 
     const dispatch = useDispatch()
 
-    const [ state, setState ] = useState({
-        title: "",
-        date: "",
-        memo: ""
-    })
+    const current = useSelector(state => (state.current))
 
     const handleChange = (event) => {
         const { name, value } = event.target
-        setState({...state, [name]: value})
+        dispatch(controlledInput(name, value))
     }
 
     const handleSubmit = () => {
-        dispatch(add({state}))
+        console.log(current)
+        dispatch(add(current))
+        dispatch(clear())
     }
 
     return (
         <>
-            <h2>Add a new todo:</h2>
-            <h4>Todo Title:</h4>
+            <h2>Add a new to-do:</h2>
+            <h4>I have to...</h4>
             <input name="title" onChange={handleChange}/>
-            <h4>Due Date:</h4>
+            <h4>Gotta do it by...</h4>
             <input name="date" onChange={handleChange}/>
-            <h4>Todo Memos:</h4>
+            <h4>Extra notes?</h4>
             <input name="memo" onChange={handleChange}/>
+            <br/>
             <button type="submit" onClick={handleSubmit}>Submit</button>
         </>
     )

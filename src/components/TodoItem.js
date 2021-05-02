@@ -12,12 +12,17 @@ const TodoItem = (props) => {
         dispatch(remove(title))
     }
 
+    const handleUpdate = () => {
+        console.log("clicked")
+    }
+
     return (
         <div id="todoitem">
             <h2>Item: {title}</h2>
     <h2>Do by: {date}</h2>
             <h2>Notes:</h2>
             <h3>{memo}</h3>
+            <button onClick={handleUpdate}>Update Todo</button>
             <button onClick={handleDelete}>Delete Todo</button>
         </div>
     )
