@@ -20,8 +20,11 @@ const todoReducer = (state = [
                     console.log(newPayload)
                     return(state.concat(newPayload))
                 default:
-                    console.log(action.payload.id)
-                    break;
+                    console.log(action.payload)
+                    let target = state.filter(todo => todo.id === action.payload.id)
+                    target = action.payload
+                    const nontarget = state.filter(todo => todo.id !== action.payload.id)
+                    return(nontarget.concat(target));
             }
         case "REMOVE":
             const newState = state.filter(todo => todo.id !== action.payload)

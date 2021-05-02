@@ -13,7 +13,6 @@ const TodoItem = (props) => {
     }
 
     const handleUpdate = () => {
-        console.log(id)
         dispatch(controlledInput("title", title))
         dispatch(controlledInput("date", date))
         dispatch(controlledInput("memo", memo))
