@@ -15,20 +15,25 @@ const NewTodo = () => {
     }
 
     const handleSubmit = () => {
-        dispatch(add(current))
-        dispatch(clear())
+        if (current.title === "" || current.date === "") {
+            alert("Make sure you have a title and due date!");
+        } else {
+            dispatch(add(current))
+            dispatch(clear())
+        }
+
     }
 
     return (
         <>
             <h2>Add a new to-do:</h2>
             <h4>I have to...</h4>
-            <input value={current.title} name="title" onChange={handleChange}/>
+            <input value={current.title} name="title" onChange={handleChange} />
             <h4>Gotta do it by...</h4>
-            <input value={current.date} name="date" onChange={handleChange}/>
+            <input value={current.date} name="date" onChange={handleChange} />
             <h4>Extra notes?</h4>
-            <input value={current.memo} name="memo" onChange={handleChange}/>
-            <br/>
+            <input value={current.memo} name="memo" onChange={handleChange} />
+            <br />
             <button type="submit" onClick={handleSubmit}>Submit</button>
         </>
     )
