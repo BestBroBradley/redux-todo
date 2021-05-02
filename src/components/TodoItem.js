@@ -4,21 +4,20 @@ import { remove, controlledInput } from "../actions"
 
 const TodoItem = (props) => {
 
-    const { title, date, memo } = props.props
+    const { title, date, memo, id } = props.props
 
     const dispatch = useDispatch()
 
     const handleDelete = () => {
-        dispatch(remove(title))
+        dispatch(remove(id))
     }
 
     const handleUpdate = () => {
-        console.log(title)
-        console.log(date)
-        console.log(memo)
+        console.log(id)
         dispatch(controlledInput("title", title))
         dispatch(controlledInput("date", date))
         dispatch(controlledInput("memo", memo))
+        dispatch(controlledInput("id", id))
     }
 
     return (

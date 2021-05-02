@@ -15,7 +15,6 @@ const NewTodo = () => {
     }
 
     const handleSubmit = () => {
-        console.log(current)
         dispatch(add(current))
         dispatch(clear())
     }

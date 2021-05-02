@@ -1,7 +1,8 @@
 const currentReducer = (state = {
         title: "",
         date: "",
-        memo: ""
+        memo: "",
+        id: 0
     }, action) => {
     switch (action.type) {
         case "CONTROL":
@@ -16,7 +17,8 @@ const currentReducer = (state = {
             state = {
                 title: "",
                 date: "",
-                memo: ""
+                memo: "",
+                id: 0
             }
             return(state); 
         default:

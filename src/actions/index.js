@@ -5,10 +5,10 @@ export const add = (todo) => {
     }
 };
 
-export const remove = (title) => {
+export const remove = (id) => {
     return {
         type: "REMOVE",
-        payload: title
+        payload: id
     }
 };
 
