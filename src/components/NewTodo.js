@@ -26,7 +26,7 @@ const NewTodo = () => {
 
     return (
         <>
-            <h2>Add a new to-do:</h2>
+            <h2 className="Header">Add a new to-do:</h2>
             <h4>I have to...</h4>
             <input value={current.title} name="title" onChange={handleChange} />
             <h4>Gotta do it by...</h4>

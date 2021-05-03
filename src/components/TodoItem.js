@@ -21,10 +21,10 @@ const TodoItem = (props) => {
 
     return (
         <div id="todoitem">
-            <h2>Item: {title}</h2>
-            <h2>Do by: {date}</h2>
-            <h2>Notes:</h2>
-            <h3>{memo}</h3>
+            <h2 id="todotitle">{title}</h2>
+            <h3 className="TodoDetails">Do by: {date}</h3>
+            <h3 className="TodoDetails">Notes:</h3>
+            <p>{memo}</p>
             <button onClick={handleUpdate}>Update Todo</button>
             <button onClick={handleDelete}>Delete Todo</button>
         </div>

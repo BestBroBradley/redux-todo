@@ -44,15 +44,15 @@ button {
   border-top: 10px grey double;
 }
 
-#newtodo {
-  margin: auto;
-}
-
-#notodos {
+.Header, #notodos {
   border: 2px solid grey;
   border-left: 10px double grey;
   border-right: 10px double grey;
   padding: 10px;
+}
+
+#newtodo {
+  margin: auto;
 }
 
 #todos {
@@ -62,8 +62,17 @@ button {
   padding: 20px;
 }
 
+#todotitle {
+  border: 2px grey dotted;
+  padding: 10px;
+}
+
+.TodoDetails {
+  font-weight: 500;
+}
+
 #todoitem {
-  width: 150px;
+  width: 200px;
   flex-wrap: wrap;
   border: 2px solid grey;
   border-left: 10px double grey;
